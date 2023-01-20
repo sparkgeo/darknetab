@@ -1,0 +1,3 @@
+249 "full" vehicles
+3 "full but occluded" vehicles
+9 "partial" vehicles
