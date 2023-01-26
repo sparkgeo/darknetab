@@ -67,6 +67,11 @@ drwxrwxr-x 2 bmaddox bmaddox  53248 Apr 25  2020 validation
 
 Note that the annotations directory is optional.
 
+You should also copy all of the files from validation into the training directory.  The mine.testing.data
+file specifies which files are used for training, testing, and validation.  However, there is a small bug
+in the SIMD repo where files in testing.txt are in both training and the validation directories.  Copying
+them all to the training directory is just easier.
+
 Now inside the darknetab/simd directory, make a backup directory so that it now looks like this:
 
 ```
@@ -96,7 +101,7 @@ drwxrwxr-x 2 bmaddox bmaddox    4096 Jan  3 13:30 simd
 Now you should be ready to train the model.  To do this, go to the main darknetab direcotry and run:
 
 ```commandline
-./darknet detector train simd/cfg/mine.testing.data simd/cfg/kaggle-yolov4-tiny-custom.cfg -dont_show
+./darknet detector train simd/cfg/mine.testing.data simd/cfg/kaggle-yolov4-tiny-custom.cfg -dont_show -map
 ```
 
 In this case we are using the kaggle yolov4 tiny config file.  This will take a while and you will see a 
@@ -116,7 +121,7 @@ total 1364732
 -rw-rw-r-- 1 bmaddox bmaddox  23650676 Jan 17 14:17 kaggle-yolov4-tiny-custom_last.weights
 ```
 
-The main file you will be interested in here is kaggle-yolov4-tiny-custom_final.weights.
+The main file you will be interested in here is kaggle-yolov4-tiny-custom_best.weights.
 
 ## Testing
 
@@ -125,6 +130,6 @@ To test your new model, there are files inside the darknetab/test_images directo
 From the darknetab directory, you would run a test like this:
 
 ```commandline
-./darknet detector test simd/cfg/mine.testing.data simd/cfg/kaggle-yolov4-tiny-custom.cfg simd/backup/kaggle-yolov4-tiny-custom_final.weights test_images/test3.png```
+./darknet detector test simd/cfg/mine.testing.data simd/cfg/kaggle-yolov4-tiny-custom.cfg simd/backup/kaggle-yolov4-tiny-custom_best.weights test_images/test3.png```
 ```
 This will pop up an output window showing the detections as well as create a predictions.jpg file in the main darknetab/ directory.
