@@ -1,0 +1,8 @@
+15 cm/pixel resolution.
+
+25 "full" vehicles
+28 "full but occluded" vehicles
+5 "partial" vehicles
+
+58 total vehicles
+
