@@ -1,0 +1,5 @@
+classes = 22
+train = sparkgeo/train.txt
+valid = sparkgeo/test.txt
+names = sparkgeo/sparkgeo.names
+backup = sparkgeo/weights

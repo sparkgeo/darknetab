@@ -1,0 +1,5 @@
+classes = 60
+train = sparkgeo/xview/train.txt
+valid = sparkgeo/xview/test.txt
+names = sparkgeo/xview/train_images/xview.names
+backup = sparkgeo/weights

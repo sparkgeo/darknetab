@@ -1,0 +1,31 @@
+ Tensor Cores are used.
+ Last accuracy mAP@0.50 = 83.40 %, best = 83.40 % 
+ 6000: 0.432342, 0.489112 avg loss, 0.000026 rate, 0.477343 seconds, 384000 images, 0.013759 hours left
+
+ calculation mAP (mean average precision)...
+ Detection layer: 30 - type = 28 
+ Detection layer: 37 - type = 28 
+376
+ detections_count = 4253, unique_truth_count = 1466  
+class_id = 0, name = car, ap = 81.80%            (TP = 938, FP = 148) 
+class_id = 1, name = swimming_pool, ap = 85.23%          (TP = 236, FP = 18) 
+
+ for conf_thresh = 0.25, precision = 0.88, recall = 0.80, F1-score = 0.84 
+ for conf_thresh = 0.25, TP = 1174, FP = 166, FN = 292, average IoU = 68.78 % 
+
+ IoU threshold = 50 %, used Area-Under-Curve for each unique Recall 
+ mean average precision (mAP@0.50) = 0.835153, or 83.52 % 
+Total Detection Time: 1 Seconds
+
+Set -points flag:
+ `-points 101` for MS COCO 
+ `-points 11` for PascalVOC 2007 (uncomment `difficult` in voc.data) 
+ `-points 0` (AUC) for ImageNet, PascalVOC 2010-2012, your custom dataset
+
+ mean_average_precision (mAP@0.50) = 0.835153 
+New best mAP!
+Saving weights to kaggle_yolov4_tiny/backup/kaggle-yolov4-tiny-custom_best.weights
+Saving weights to kaggle_yolov4_tiny/backup/kaggle-yolov4-tiny-custom_6000.weights
+Saving weights to kaggle_yolov4_tiny/backup/kaggle-yolov4-tiny-custom_last.weights
+Saving weights to kaggle_yolov4_tiny/backup/kaggle-yolov4-tiny-custom_final.weights
+If you want to train from the beginning, then use flag in the end of training command: -clear 
